@@ -1,140 +1,37 @@
-# Text-Editor
+# Text Editor
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-## Table of Contents 
+## Description
+This Note Taker application allows a user to write and save notes. It includes a server with routes to access the front end, as well as api routes to communicate with the database.
 
-<details>
-<summary>Table of Contents</summary>
+The user is able to create a new note, which only then a save button becomes available. Once the note is saved, a unique ID is applied to the note through a calculation implemented in `/routes/apiRoutes/noteRoutes.js`. Upon clicking a saved note, it will apply the unique ID to display the selected note on the screen. The user is also able to delete any saved notes.
 
-- [Overview](#overview)
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
+This project is also deployed on [heroku](https://murmuring-headland-68396.herokuapp.com/)
 
-</details>
+#### Screenshot
+![Screenshot](/public/assets/images/screenshot.png)
 
-## Overview
+## Table of Contents
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License(s)](#licenses)
+4. [Questions](#questions)
 
-### Description
+## Installation
+Clone the repo and open the project. In terminal, execute the command `npm i`. This will install all the dependencies required for this application to work.
 
-Using PWAs to create notes or code snippets with or without an internet connection.
-
-### Installation
-
-Clone repo from Github, run both `npm install` and `npm start` from the root directory. Or watching and using the app has deployed from `https://text-editor-app-6408.herokuapp.com/`.
-
-### Usage
-
-This product has been deployed in `https://text-editor-app-6408.herokuapp.com/`. Users can download the app. It can be installed in any device.
-
-### The challenge
-
-Users should be able to:
-
-- write notes with or without an internet connection.
-- install app.
-- reopen the editor after closing it, the content has been retrieved.
-
-
-### Screenshot
-
-![](./assets/images/FireShot%20Capture%20045%20-%20J.A.T.E%20-%201.png)
-![](./assets/images/FireShot%20Capture%20046%20-%20J.A.T.E%20-%202.png)
-
-### Links
-
-- Solution URL: [https://github.com/YangLongWang/Text-Editor](https://github.com/YangLongWang/Text-Editor)
-- Deployed URL: [https://text-editor-app-6408.herokuapp.com/](https://text-editor-app-6408.herokuapp.com/)
-
-## My process
-
-### Built with
-
-- JavaScript
-
-### What I learned
-
-- using webpack to bundle JavaScript files
-- using IndexedDB to save data
-- using service worker and manifest
-
-To see how I add code snippets, see below:
-
-```JS
-    mode: 'production',
-    entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js'
-    },
-    output: {
-      filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: './index.html',
-        title: 'Webpack Plugin',
-      }),
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
-      }),
-      new WebpackPwaManifest({
-        name: 'Just Another Text Editor',
-        short_name: 'J.A.T.E',
-        description: 'Best text editor!',
-        background_color: '#7eb4e2',
-        theme_color: '#7eb4e2',
-        start_url: './',
-        publicPath: './',
-        icons: [
-          {
-            src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
-          },
-          {
-            src: path.resolve('src/images/logo.png'),
-            size: '1024x1024',
-            destination: path.join('assets', 'icons'),
-            purpose: 'maskable'
-          }
-        ],
-      })
-    ],
-
-    module: {
-      rules: [
-        {
-          test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
-        },
-        {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                ['@babel/preset-env', { targets: "defaults" }]
-              ]
-            }
-          }
-        }
-      ],
-    }
+## Usage
+Once the dependancies are installed, you need to execute `npm start` to start the server. Once the server is running, a message will appear saying,
 ```
+API server now on port xxxx!
+```
+Open your browser and go to `localhost:xxxx` where 'xxxx' is the port being used to host the server. 
 
-## Author
+## License(s)
+MIT
 
-- Github - [Longyang Wang](https://github.com/YangLongWang)
+## Questions
+My name is Arslan Tahir, the creator of this project. If you have any issues, comments, concerns, or questions regarding this project, feel free to contact me at tahir.arslan@gmail.com.
+
+If you would like to check out my other projects, feel free to explore my !(GitHub Page)[https://github.com/tahir-arslan/].
+    
