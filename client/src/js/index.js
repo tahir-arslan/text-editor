@@ -3,8 +3,10 @@ import Editor from './editor';
 import './database';
 import '../css/style.css';
 import Logo from '../images/logo.png';
+import { initdb } from './database';
 
 window.addEventListener('load', function () {
+  initdb();
   document.getElementById('logo').src = Logo;
 });
 
